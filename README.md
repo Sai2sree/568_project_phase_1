@@ -1,2 +1,37 @@
-# 568_project_phase_1
-Downloading Stock Information and Storing it in a Database: Historic and Real-time 
+# Project Phase 1
+
+(historic and real-time databases are "MongoDB databases as a service", deployed and hosted by AWS)
+
+## Instructions for running historic database :
+
+
+- `virtualenv $HOME/venv`
+- `source $HOME/venv/bin/activate`
+- `pip install pandas pymongo googlefinance.client`
+- `python historic_database.py` 
+
+## Instructions for running real-time database using cron (UNIX only): 
+
+### To access db from shell:
+
+- (make sure MongoDB is installed)
+- `mongo ds027729.mlab.com:27729/historic_database -u user -p user`
+- `use historic_database`
+- `show collections`
+
+### Additional commands for queries
+
+- `db.<collectionname>.find()`
+- `db.<collectionname.find().sort({Timestamp: -1})`
+- `db.<collectionname>.find().sort({Timestamp: -1}).limit(1)`
+
+### To store each collection as .json:
+
+- launch mongo from terminal, open new terminal: 
+
+- `mongoexport -c <collection_name> --uri=mongodb://user:user@ds027729.mlab.com:27729/historic_database --out historic_<collection_name>_stocks.json`
+
+
+### To clean-up collections:
+
+`python cleanup.py`
