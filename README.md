@@ -12,6 +12,16 @@
 
 ## Instructions for running real-time database using cron (UNIX only): 
 
+- sudo crontab -e
+```
+SHELL=/bin/sh
+MAILTO=<username>
+*/1 * * * * $PATH_TO_GIT/my_script.sh >> $PATH_TO_OUTPUT/out.log 2>&1
+```
+
+- `vi $PATH_TO_GIT/my_script.sh`
+- `modify $PATH_TO_GIT`
+
 ### To access db from shell:
 
 - (make sure MongoDB is installed)
