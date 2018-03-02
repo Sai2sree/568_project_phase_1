@@ -23,8 +23,8 @@ MAILTO=<username>
 **Make sure you change $HOME into the actual pwd or cron won't know where to look
 ```
 
-- `vi $PATH_TO_GIT/my_script.sh`
-- `modify $PATH_TO_GIT`
+- `vi $HOME/568_project_phase_1/my_script.sh`
+- modify first line to point to the pwd of `$HOME/568_project_phase_1/realtime_database.py`
 
 ### To access db from shell:
 
