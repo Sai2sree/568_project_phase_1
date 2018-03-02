@@ -1,5 +1,3 @@
-realtime
-
 import sys
 import pandas as pd
 import pdb
@@ -13,7 +11,7 @@ class realtime_stock_data:
     def __init__(self):
 
         self.period = "1m"
-        self.interval = 0
+        self.interval = 60
         self.stock_data = None 
 
         self.params = [
@@ -87,6 +85,14 @@ class realtime_stock_data:
             'x':'NYSE',
             'p': self.period,
             'i': self.interval,},
+
+        # Google
+
+        {
+            'q':'GOOGL',
+            'x':'NASDAQ',
+            'p': self.period,
+            'i': self.interval,},
         ]
 
         
@@ -99,8 +105,7 @@ class realtime_stock_data:
         # URI: mongodb://user:user@ds151508.mlab.com:51508/realtime_database
         
         connection = MongoClient('mongodb://user:user@ds151508.mlab.com:51508/realtime_database')
-
-        db = connection['realtime_databse']
+        db = connection['realtime_database']
         db.authenticate('user', 'user')
 
         
