@@ -18,7 +18,7 @@
 ```
 SHELL=/bin/sh
 MAILTO=<username>
-*/1 * * * * $HOME/568_project_phase_1/my_script.sh >> $HOME/568_project_phase_1/out.log 2>&1
+* * * * * $HOME/568_project_phase_1/my_script.sh >> $HOME/568_project_phase_1/out.log 2>&1
 
 **Make sure you change $HOME into the actual pwd or cron won't know where to look
 ```
